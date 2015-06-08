@@ -2,7 +2,7 @@
 
 FROM ubuntu:12.04
 
-MAINTAINER gilacode
+MAINTAINER aeharding
 
 # update ubuntu
 RUN apt-get update
@@ -26,7 +26,7 @@ RUN touch /etc/php5/conf.d/mongo.ini
 RUN echo "extension=mongo.so" >> /etc/php5/conf.d/mongo.ini
 
 # install RockMongo
-RUN cd /root && wget --no-check-certificate https://github.com/gilacode/rockmongo/archive/master.zip -O rockmongo-master.zip
+RUN cd /root && wget --no-check-certificate https://github.com/aeharding/rockmongo/archive/master.zip -O rockmongo-master.zip
 RUN cd /root && unzip rockmongo-master.zip -d /var/ && rm -fr /var/www && mv /var/rockmongo-master/ /var/www
 #RUN cd /var/www && ls -al
 
